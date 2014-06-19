@@ -13,3 +13,4 @@ d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Newto
 d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.dll
 d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.pdb
 d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\XapCacheFile.xml
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Serialization.dll

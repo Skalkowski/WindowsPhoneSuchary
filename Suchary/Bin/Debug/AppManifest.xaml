@@ -2,5 +2,6 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="Suchary" Source="Suchary.dll" />
     <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="Serialization" Source="Serialization.dll" />
   </Deployment.Parts>
 </Deployment>

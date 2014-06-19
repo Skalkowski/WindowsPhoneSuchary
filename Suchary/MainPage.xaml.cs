@@ -11,6 +11,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Newtonsoft.Json;
+using System.IO;
+using System.Text;
+using System.Runtime.Serialization;
 
 namespace Suchary
 {
@@ -32,19 +35,34 @@ namespace Suchary
 
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-
-            var rootObject = JsonConvert.DeserializeObject<RootObject>(e.Result);
-            foreach (var suchar in rootObject.Suchar)
+           
+            List<String> sucharyDoDodania = new List<String>();
+            List<String> sucharyPoDodania = new List<String>();
+            String dane = e.Result;
+            String[] suchary = dane.Split('-');
+            String wyjscie = "";
+            foreach (String suchar in suchary)
             {
-              //  Console.WriteLine(suchar.suchar);
+                sucharyDoDodania.Add(suchar);
+               
             }
+            Dane.suchary = sucharyDoDodania;
+
+            sucharyDoDodania = Dane.suchary;
+
+            foreach (string dupa in Dane.suchary)
+            {
+                wyjscie = wyjscie + "\n" + dupa;
+            }
+
+            MessageBox.Show(wyjscie);
         }
 
         private void buttonPobieraj_Click(object sender, RoutedEventArgs e)
         {
             pobierzSuchary();
         }
-
+      
 
 
     }
