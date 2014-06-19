@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Newtonsoft.Json;
 
 namespace Suchary
 {
@@ -31,11 +32,17 @@ namespace Suchary
 
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
+
             var rootObject = JsonConvert.DeserializeObject<RootObject>(e.Result);
-            foreach (var blog in rootObject.MyBlogList)
+            foreach (var suchar in rootObject.Suchar)
             {
-                Console.WriteLine(blog.TITLE);
+              //  Console.WriteLine(suchar.suchar);
             }
+        }
+
+        private void buttonPobieraj_Click(object sender, RoutedEventArgs e)
+        {
+            pobierzSuchary();
         }
 
 

@@ -10,5 +10,5 @@ public class Suchar
 
 public class RootObject
 {
-    public List<Suchar> suchar { get; set; }
+    public List<Suchar> Suchar { get; set; }
 }

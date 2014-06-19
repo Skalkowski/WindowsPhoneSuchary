@@ -1,0 +1,15 @@
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\App.g.i.cs
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\MainPage.g.i.cs
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.g.resources
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\ApplicationIcon.png
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Background.png
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Suchary.dll
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Suchary.pdb
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\AppManifest.xaml
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Suchary.xap
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Newtonsoft.Json.dll
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Newtonsoft.Json.xml
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.dll
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.pdb
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\XapCacheFile.xml
