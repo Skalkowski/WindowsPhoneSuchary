@@ -14,3 +14,6 @@ d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Sucha
 d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.pdb
 d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\XapCacheFile.xml
 d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Serialization.dll
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Microsoft.Phone.Controls.dll
+d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Microsoft.Phone.Controls.xml

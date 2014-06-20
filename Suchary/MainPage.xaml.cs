@@ -15,20 +15,85 @@ using System.IO;
 using System.Text;
 using System.Runtime.Serialization;
 using System.IO.IsolatedStorage;
+using Coding4Fun.Toolkit.Controls;
+using Microsoft.Phone.Net.NetworkInformation;
+using System.Diagnostics;
 
 namespace Suchary
 {
     public partial class MainPage : PhoneApplicationPage
     {
         IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+        List<String> sucharyList = new List<string>();
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-            if (settings.Contains("suchary")) Dane.suchary = (List<String>) settings["suchary"];
+            if (settings.Contains("suchary")) Dane.suchary = (List<String>)settings["suchary"];
             if (!Dane.suchary.Any())
             {
                 textBlockSuchary.Text = "Najpierw ściągnij suchary";
+                buttonNastepny.IsEnabled = false;
+            }
+            else
+            {
+
+                foreach (String suchar in Dane.suchary)
+                {
+                    sucharyList.Add(suchar);
+                }
+
+                losuj();
+            }
+
+        }
+
+        private void buttonPobieraj_Click(object sender, RoutedEventArgs e)
+        {
+            ToastPrompt toast = new ToastPrompt
+            {
+                Background = new SolidColorBrush(Colors.Red),
+                Message = "Brak połączenia internetowego."
+            };
+
+            if (checkNetworkConnection())
+            {
+                pobierzSuchary();
+                
+                textBlockSuchary.Text = "Losuj suchara :)";
+                buttonNastepny.IsEnabled = true;
+            }
+            else
+                toast.Show();
+        }
+
+        private void buttonNastepny_Click(object sender, RoutedEventArgs e)
+        {
+            if (sucharyList.Any())
+                losuj();
+            else
+            {
+                foreach (String suchar in Dane.suchary)
+                {
+                    sucharyList.Add(suchar);
+                }
+            }
+        }
+
+        public void losuj()
+        {
+            
+            Random random = new Random();
+            int wylosowana = random.Next(0, sucharyList.Count);
+            textBlockSuchary.Text = sucharyList[wylosowana];
+            sucharyList.RemoveAt(wylosowana);
+            int wielkosc = sucharyList.Count;
+            if (!sucharyList.Any())
+            {
+                foreach (String suchar in Dane.suchary)
+                {
+                    sucharyList.Add(suchar);
+                }
             }
         }
 
@@ -41,48 +106,47 @@ namespace Suchary
 
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
+            ToastPrompt toast = new ToastPrompt
+            {
+                Background = new SolidColorBrush(Colors.Green),
+                Message = "Suchary zostały pobrane"
+            };
             String[] sucharyTab = e.Result.Split('@');
             String wyjscie = "";
+            Dane.suchary.Clear();
             foreach (String suchar in sucharyTab)
             {
                 Dane.suchary.Add(suchar);
+                sucharyList.Add(suchar);
             }
-
             if (settings.Contains("suchary"))
             {
                 settings.Remove("suchary");
                 settings.Add("suchary", Dane.suchary);
                 settings.Save();
-                MessageBox.Show("nadpisałem suchary");
             }
             else
             {
                 settings.Add("suchary", Dane.suchary);
                 settings.Save();
-                MessageBox.Show("stworzylem suchary");
             }
-
-
-            //foreach (string dupa in Dane.suchary)
-            //{
-            //    wyjscie = wyjscie + "\n\n" + dupa;
-            //}
-
-            //MessageBox.Show(wyjscie);
+            toast.Show();
         }
 
-        private void buttonPobieraj_Click(object sender, RoutedEventArgs e)
+
+        public static bool checkNetworkConnection()
         {
-            pobierzSuchary();
+            var ni = NetworkInterface.NetworkInterfaceType;
+
+            bool IsConnected = false;
+            if ((ni == NetworkInterfaceType.Wireless80211) || (ni == NetworkInterfaceType.MobileBroadbandCdma) || (ni == NetworkInterfaceType.MobileBroadbandGsm))
+                IsConnected = true;
+            else if (ni == NetworkInterfaceType.None)
+                IsConnected = false;
+            return IsConnected;
         }
 
-        private void buttonNastepny_Click(object sender, RoutedEventArgs e)
-        {
-            Random wylosowana = new Random();
-            if (Dane.suchary.Any())
-                textBlockSuchary.Text = Dane.suchary[wylosowana.Next(0,Dane.suchary.Count)];
-            else
-                textBlockSuchary.Text = "Najpierw ściągnij suchary";
-        }
+
     }
+
 }

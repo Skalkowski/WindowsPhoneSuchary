@@ -1,12 +1,14 @@
-﻿<xapCache source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Suchary.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2014-06-20 14:10:03">
+﻿<xapCache source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Suchary.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2014-06-20 16:31:51">
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014-06-19 15:15:39" />
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Background.png" archivePath="Background.png" lastWriteTime="2014-06-19 09:24:41" />
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="2014-06-19 09:24:41" />
-  <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.dll" archivePath="Suchary.dll" lastWriteTime="2014-06-20 14:10:03" />
+  <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\obj\Debug\Suchary.dll" archivePath="Suchary.dll" lastWriteTime="2014-06-20 16:31:51" />
+  <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\wp71\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="2014-06-20 14:26:33" />
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="2014-06-19 14:55:54" />
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\packages\Silverlight-Serializer.2.0.0.0\lib\sl4-windowsphone71\Serialization.dll" archivePath="Serialization.dll" lastWriteTime="2014-06-19 17:12:27" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="2012-03-19 16:29:06" />
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="2014-06-19 09:24:41" />
-  <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014-06-19 17:29:12" />
+  <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014-06-20 14:28:08" />
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="2014-06-19 09:24:41" />
   <file source="d:\documents\visual studio 2010\Projects\Projekt\Suchary\Suchary\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="2014-06-19 09:24:41" />
 </xapCache>
