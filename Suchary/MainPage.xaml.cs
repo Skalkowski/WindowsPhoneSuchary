@@ -23,47 +23,47 @@ namespace Suchary
         public MainPage()
         {
             InitializeComponent();
+            if (!Dane.suchary.Any())
+            {
+                textBlockSuchary.Text = "Najpierw ściągnij suchary";
+            }
         }
 
         public void pobierzSuchary()
         {
             WebClient webClient = new WebClient();
             webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(webClient_DownloadStringCompleted);
-            webClient.DownloadStringAsync(new Uri("http://kubavic.vdl.pl/suchary.json"));
+            webClient.DownloadStringAsync(new Uri("http://project-midas.com/michal/suchary.txt"));
         }
-
 
         void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-           
-            List<String> sucharyDoDodania = new List<String>();
-            List<String> sucharyPoDodania = new List<String>();
-            String dane = e.Result;
-            String[] suchary = dane.Split('-');
+            String[] sucharyTab = e.Result.Split('@');
             String wyjscie = "";
-            foreach (String suchar in suchary)
+            foreach (String suchar in sucharyTab)
             {
-                sucharyDoDodania.Add(suchar);
-               
+                Dane.suchary.Add(suchar);
             }
-            Dane.suchary = sucharyDoDodania;
+            //foreach (string dupa in Dane.suchary)
+            //{
+            //    wyjscie = wyjscie + "\n\n" + dupa;
+            //}
 
-            sucharyDoDodania = Dane.suchary;
-
-            foreach (string dupa in Dane.suchary)
-            {
-                wyjscie = wyjscie + "\n" + dupa;
-            }
-
-            MessageBox.Show(wyjscie);
+            //MessageBox.Show(wyjscie);
         }
 
         private void buttonPobieraj_Click(object sender, RoutedEventArgs e)
         {
             pobierzSuchary();
         }
-      
 
-
+        private void buttonNastepny_Click(object sender, RoutedEventArgs e)
+        {
+            Random wylosowana = new Random();
+            if (Dane.suchary.Any())
+                textBlockSuchary.Text = Dane.suchary[wylosowana.Next(0,Dane.suchary.Count)];
+            else
+                textBlockSuchary.Text = "Najpierw ściągnij suchary";
+        }
     }
 }

@@ -29,9 +29,11 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="Pobieraj" Height="72" HorizontalAlignment="Left" Margin="6,500,0,0" Name="buttonPobieraj" VerticalAlignment="Top" Width="160" Click="buttonPobieraj_Click" />
-            <Button Content="Button" Height="72" HorizontalAlignment="Left" Margin="290,500,0,0" Name="button2" VerticalAlignment="Top" Width="160" />
+            <Button Content="Następny" Height="72" HorizontalAlignment="Left" Margin="290,500,0,0" Name="buttonNastepny" VerticalAlignment="Top" Width="160" Click="buttonNastepny_Click" />
         </Grid>
-        <ScrollViewer Height="447" HorizontalAlignment="Left" Margin="21,19,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="447" Grid.Row="1" />
+        <ScrollViewer Height="447" HorizontalAlignment="Left" Margin="21,19,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="447" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Name="textBlockSuchary" Text="TextBlock" Width="432" />
+        </ScrollViewer>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
