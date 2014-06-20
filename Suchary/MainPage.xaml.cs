@@ -14,15 +14,18 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Text;
 using System.Runtime.Serialization;
+using System.IO.IsolatedStorage;
 
 namespace Suchary
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            if (settings.Contains("suchary")) Dane.suchary = (List<String>) settings["suchary"];
             if (!Dane.suchary.Any())
             {
                 textBlockSuchary.Text = "Najpierw ściągnij suchary";
@@ -44,6 +47,22 @@ namespace Suchary
             {
                 Dane.suchary.Add(suchar);
             }
+
+            if (settings.Contains("suchary"))
+            {
+                settings.Remove("suchary");
+                settings.Add("suchary", Dane.suchary);
+                settings.Save();
+                MessageBox.Show("nadpisałem suchary");
+            }
+            else
+            {
+                settings.Add("suchary", Dane.suchary);
+                settings.Save();
+                MessageBox.Show("stworzylem suchary");
+            }
+
+
             //foreach (string dupa in Dane.suchary)
             //{
             //    wyjscie = wyjscie + "\n\n" + dupa;
